@@ -1,18 +1,16 @@
 --*/
 --Data cleaning with SQL/*
+--To be able to complete this project different functions where used such as:Joins, CTE, Windows Functions, Row_Number,
+--Aggregate Functions, Converting Data Types and substring
+*/ 
 
 SELECT *
 FROM NashvilleData
 
---Standardize Date Format
+--Standardize Date Format: Lets start cleaning from the date field
 
-SELECT SalesDate --CONVERT(Date, SaleDate) AS SalesDate
+SELECT SalesDate
 FROM NashvilleData
-
-UPDATE NashvilleData
-SET SaleDate = CONVERT(Date, SaleDate)
-
---The above query did not mee expectation so we try alter table
 
 ALTER TABLE NashvilleData
 ADD SalesDate Date
@@ -21,7 +19,7 @@ UPDATE NashvilleData
 SET SalesDate = CONVERT(Date, SaleDate)
 
 
---Lets take a quick view the property address field
+--Lets take a quick view of the property address field
 
 SELECT PropertyAddress
 FROM NashvilleData
